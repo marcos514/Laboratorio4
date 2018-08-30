@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./binding.component.css']
 })
 export class BindingComponent implements OnInit {
-  msj="Ingrese datos <h6> FORRO </h6>";
+  msj="Ingrese datos";
+  msjBtn="Enviar"
   constructor() { }
 
   ngOnInit() {
