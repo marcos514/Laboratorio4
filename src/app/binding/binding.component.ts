@@ -7,8 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BindingComponent implements OnInit {
   msj="Ingrese datos";
-  msjBtn="Enviar"
+  msjBtn="Enviar";
+  nombre="Pepe";
   constructor() { }
+
+  /**
+   * Enviar
+   * @param e: Evento del click 
+   */
+  public Enviar(e) 
+  {
+    console.log(e);
+  }
 
   ngOnInit() {
   }
