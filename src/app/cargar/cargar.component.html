@@ -5,4 +5,4 @@
 <h3>Sueldo</h3>
 <input type="number" [(ngModel)]="sueldo"><br><br>
 <input type="button" value="Enviar Persona" (click)="EnviarPersona()">
-<input type="button" ng-disabled="cantidad" value="Enviar Array" (click)="CambiarArray()">
+<input type="button" [disabled]="cantidad>4" value="Enviar Array" (click)="CambiarArray()">
