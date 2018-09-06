@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
 import { Persona } from '../persona';
 @Component({
   selector: 'app-cargar',
@@ -9,29 +9,27 @@ export class CargarComponent implements OnInit {
   nombre="";
   apellido="";
   sueldo="";
-  lista=[]
-  persona:Persona;
+  @Output() personaEnviar = new EventEmitter();
+  @Output() listaEnviar = new EventEmitter();
   listaAux=[];
+  @Input() cantidad;
+
 
   constructor() { }
 
   public EnviarPersona() 
   {
-    this.persona=new Persona(this.nombre,this.apellido,this.sueldo);
-    this.listaAux.push(this.persona);
+    let personaAux=new Persona(this.nombre,this.apellido,this.sueldo);
+    this.listaAux.push(personaAux);
+    this.personaEnviar.emit(personaAux);
+
   }
 
   public CambiarArray()
   {
-    let personita:Persona=new Persona(this.nombre,this.apellido,this.sueldo);
-    this.listaAux.push(this.persona);
-    this.lista=this.listaAux;
-  }
-
-  public Cantidad(event)
-  {
-    console.log(event);
-    
+    let personaAux:Persona=new Persona(this.nombre,this.apellido,this.sueldo);
+    this.listaAux.push(personaAux);
+    this.listaEnviar.emit(this.listaAux);
   }
   
   ngOnInit() {

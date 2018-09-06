@@ -16,6 +16,7 @@
 </head>
 <body>
   <div >
-    <app-cargar></app-cargar>
+    <app-cargar (listaEnviar)="CargarLista($event)" (personaEnviar)="CargarPersona($event)" [cantidad]="cantidad"></app-cargar>
+    <app-grilla [personas]="personas" [persona]="persona" (cantidad)="TomarCantidad($event)"></app-grilla>
   </div>
 </body>
