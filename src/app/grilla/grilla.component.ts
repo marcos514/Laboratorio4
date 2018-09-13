@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output,EventEmitter} from '@angular/core';
-import { Persona } from '../persona';
+import {Router, ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-grilla',
@@ -44,7 +44,11 @@ export class GrillaComponent implements OnInit/*,OnChanges*/ {
     
   }
 
-  constructor() {}
+  constructor(private routa:Router,private ar:ActivatedRoute) 
+  {
+    console.log(routa);
+    console.log(ar.snapshot.params);
+  }
 
   ngOnInit() {
   }

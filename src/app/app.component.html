@@ -16,7 +16,10 @@
 </head>
 <body>
   <div >
-    <app-cargar (listaEnviar)="CargarLista($event)" (personaEnviar)="CargarPersona($event)" [cantidad]="cantidad"></app-cargar>
-    <app-grilla [personas]="personas" [persona]="persona" (cantidad)="TomarCantidad($event)"></app-grilla>
+      <a class="btn btn-primary" routerLink="/form"  role="button">FORM</a>
+      <a class="btn btn-primary" routerLink="/grilla"  role="button">GRILLA</a>
+      <a class="btn btn-primary" routerLink=""  role="button">DOS</a>
+      <router-outlet></router-outlet>
+    
   </div>
 </body>
