@@ -1,6 +1,11 @@
 import { Injectable } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
+import { HttpHeaders} from "@angular/common/http";
+
+
+const CONFIG={headers:new HttpHeaders({token:localStorage.getItem("Token")})};
+
 @Injectable({
   providedIn: 'root'
 })
@@ -34,4 +39,11 @@ export class DataService {
         contrasena:pass,
       }});
   }
+
+  Listado()
+  {
+    return this.http.get("http://192.168.2.57:3000/Listado",CONFIG);
+  }
+
+
 }

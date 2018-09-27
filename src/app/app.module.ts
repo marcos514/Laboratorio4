@@ -13,7 +13,7 @@ import { DataService } from './servicios/data.service';
 import {HttpComponent} from "./http/http.component";
 import { LoginComponent } from './login/login.component';
 
-
+//{path:"",component:"",canactivaté[servicios]}
 
 @NgModule({
   declarations: [
@@ -30,6 +30,7 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     RuteoModule,
     HttpClientModule
+    
   ],
   providers: [DataService],
   bootstrap: [AppComponent],

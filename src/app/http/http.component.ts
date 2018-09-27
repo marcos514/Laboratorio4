@@ -17,6 +17,10 @@ export class HttpComponent implements OnInit {
     this.http.Token().subscribe(data=>{console.log(data);},
     Err=>{console.log(Err);}
     );
+
+    this.http.Listado().subscribe(data=>{console.log(data);},
+    Err=>{console.log(Err);}
+    );
   }
 
 }

@@ -6,9 +6,10 @@ import { CargarComponent } from '../../cargar/cargar.component';
 import {Routes,RouterModule} from "@angular/router";
 import { FormComponent } from '../../form/form.component';
 import { PersonasComponent } from '../../personas/personas.component';
+import {authserviceService } from "../../servicios/authservice.service";
 
 const rutas : Routes =[
-  {path:"",component:FormComponent},
+  {path:"",component:FormComponent, /*autentificacion  -->*/canActivate:[authserviceService]},
   {path:"grilla",component:GrillaComponent},
   {path:"form",component:CargarComponent},
   {path:"persona/:id",component:GrillaComponent,data:{title:"Lab 4"}},
