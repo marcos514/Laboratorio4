@@ -19,11 +19,14 @@ const rutas : Routes =[
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forRoot(rutas)
+    RouterModule.forRoot(rutas),
+    
   ],
   exports:[RouterModule],
   declarations: [
   ]
   
 })
-export class RuteoModule { }
+export class RuteoModule 
+{ 
+}

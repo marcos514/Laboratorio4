@@ -8,6 +8,11 @@ import { CargarComponent } from './cargar/cargar.component';
 import { FormComponent } from './form/form.component';
 import { PersonasComponent } from './personas/personas.component';
 import { RuteoModule } from './modules/ruteo/ruteo.module';
+import { HttpClientModule } from '@angular/common/http';
+import { DataService } from './servicios/data.service';
+import {HttpComponent} from "./http/http.component";
+import { LoginComponent } from './login/login.component';
+
 
 
 @NgModule({
@@ -16,14 +21,17 @@ import { RuteoModule } from './modules/ruteo/ruteo.module';
     GrillaComponent,
     CargarComponent,
     FormComponent,
-    PersonasComponent
+    PersonasComponent,
+    HttpComponent,
+    LoginComponent   
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RuteoModule
+    RuteoModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
