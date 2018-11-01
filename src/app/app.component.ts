@@ -8,7 +8,8 @@ import { Persona } from './persona';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  personas;
+
+  /*personas;
   persona;
   cantidad;
 
@@ -25,8 +26,5 @@ export class AppComponent {
   public TomarCantidad(event)
   {
     this.cantidad=event;
-  }
-
-
-  title = 'app';
+  }*/
 }
