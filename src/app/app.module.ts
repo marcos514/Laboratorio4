@@ -1,5 +1,6 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+/*import { BrowserModule } from '@angular/platform-browser';
+import { NgModule, ApplicationRef  } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
@@ -14,25 +15,57 @@ import {HttpComponent} from "./http/http.component";
 import { LoginComponent } from './login/login.component';
 
 //{path:"",component:"",canactivaté[servicios]}
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
     AppComponent,
     GrillaComponent,
+    CommonModule,
+    ApplicationRef,
     CargarComponent,
     FormComponent,
     PersonasComponent,
     HttpComponent,
-    LoginComponent   
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RuteoModule,
-    HttpClientModule
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDsvFWiM2Vf54CjZNOBr_lqaWVSGfYVy_Y'
+    })
     
   ],
   providers: [DataService],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule { }*/
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule, ApplicationRef } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { AppComponent } from './app.component';
+import { MapaComponent } from "./mapa/mapa.component";
+
+import { AgmCoreModule } from '@agm/core';
+import { MilibModule } from "../../projects/milib/src/lib/milib.module";
+
+@NgModule({
+  imports: [
+    BrowserModule,
+    CommonModule,
+    FormsModule,
+    MilibModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDsvFWiM2Vf54CjZNOBr_lqaWVSGfYVy_Y'
+    })
+  ],
+  providers: [],
+  declarations: [ AppComponent, MapaComponent ],
+  bootstrap: [ AppComponent ]
+})
+export class AppModule {}
+
